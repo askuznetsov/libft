@@ -1,3 +1,0 @@
-char	*strncpy(char *destptr, const char *strcptr, size_t num)
-{
-  
