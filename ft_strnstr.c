@@ -1,21 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okuznets <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/01 18:50:22 by okuznets          #+#    #+#             */
-/*   Updated: 2017/12/14 14:46:50 by okuznets         ###   ########.fr       */
+/*   Created: 2017/12/14 17:01:13 by okuznets          #+#    #+#             */
+/*   Updated: 2017/12/14 19:04:43 by okuznets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalpha(int c)
+char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	else
-		return (0);
+	int i;
+	int j;
+	int k;
+
+	i = 0;
+	j = 0;
+	k = 0;
+	while (s2[j])
+		j++;
+	while (s1[i])
+	{
+		while (s1[i] == s2[k])
+		{
+			i++;
+			k++;
+			if (i > (int)(len))
+				break ;
+			if (s2[k] == '\0')
+				return ((char *)&(s1[i - j]));
+		}
+		i++;
+	}
+	if (s2[0] == '\0')
+		return ((char *)(s1));
+	return (NULL);
 }

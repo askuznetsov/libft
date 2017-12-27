@@ -5,17 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: okuznets <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 16:39:56 by okuznets          #+#    #+#             */
-/*   Updated: 2017/11/20 17:25:31 by okuznets         ###   ########.fr       */
+/*   Created: 2017/12/01 18:40:59 by okuznets          #+#    #+#             */
+/*   Updated: 2017/12/14 14:46:28 by okuznets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		isalnum(int c)
+#include "libft.h"
+
+int		ft_isalnum(int c)
 {
-	if (c >= 48 && c <= 57) ||
-		(c >= 65 && c <= 90) ||
-		(c >= 97 && c <= 122)
-			return (1);
+	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
 	else
 		return (0);
 }

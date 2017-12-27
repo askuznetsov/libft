@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okuznets <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/01 18:50:22 by okuznets          #+#    #+#             */
-/*   Updated: 2017/12/14 14:46:50 by okuznets         ###   ########.fr       */
+/*   Created: 2017/12/27 19:08:38 by okuznets          #+#    #+#             */
+/*   Updated: 2017/12/27 19:15:47 by okuznets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalpha(int c)
+char	*ft_strmap(const char *s, char (*f)(char))
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	else
+	size_t i;
+	char *c;
+	size_t len;
+
+	i = 0;
+	if (s == 0 || f == 0)
 		return (0);
+	len = ft_strlen(s);
+	c = (char *)malloc(sizeof(char) * len + 1);
+	if (c == 0)
+		return (0);
+	while (s[i])
+	{
+		c[i] = f(s[i]);
+		i++;
+	}
+	c[i] = '\0';
+	return (c);
 }
