@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okuznets <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/27 19:08:38 by okuznets          #+#    #+#             */
-/*   Updated: 2017/12/27 19:15:47 by okuznets         ###   ########.fr       */
+/*   Created: 2018/01/11 19:32:55 by okuznets          #+#    #+#             */
+/*   Updated: 2018/01/11 20:01:34 by okuznets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(const char *s, char (*f)(char))
+void	ft_putnbr_fd(int nb, int fd)
 {
-	size_t	i;
-	size_t	len;
-	char	*c;
+	unsigned int	i;
+	int				ten;
 
-	i = 0;
-	if (s == 0 || f == 0)
-		return (0);
-	len = ft_strlen(s);
-	c = (char *)malloc(sizeof(char) * len + 1);
-	if (c == 0)
-		return (0);
-	while (s[i])
+	ten = 1;
+	if (nb < 0)
+		write(fd, "-", 1);
+	i = nb < 0 ? -nb : nb;
+	while (i >= 10)
 	{
-		c[i] = f(s[i]);
-		i++;
+		i /= 10;
+		ten *= 10;
 	}
-	c[i] = '\0';
-	return (c);
+	i = nb < 0 ? -nb : nb;
+	while (ten)
+	{
+		ft_putchar_fd(i / ten + '0', fd);
+		i %= ten;
+		ten /= 10;
+	}
 }

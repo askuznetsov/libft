@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okuznets <okuznets@student.42.fr>          +#+  +:+       +#+        */
+/*   By: okuznets <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/01 19:02:19 by okuznets          #+#    #+#             */
-/*   Updated: 2018/01/16 14:50:06 by okuznets         ###   ########.fr       */
+/*   Created: 2018/01/11 19:26:02 by okuznets          #+#    #+#             */
+/*   Updated: 2018/01/11 19:28:43 by okuznets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+void	ft_putstr_fd(const char *s, int fd)
 {
-	size_t i;
+	int	i;
 
-	i = 0;
-	while (src[i])
+	if (s)
 	{
-		dst[i] = src[i];
-		i++;
+		i = ft_strlen(s);
+		write(fd, s, i);
 	}
-	dst[i] = '\0';
-	return (dst);
 }

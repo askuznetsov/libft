@@ -14,8 +14,8 @@
 
 void	*ft_memalloc(size_t size)
 {
-	char	 *mem;
-	size_t 		i;
+	size_t	i;
+	char	*mem;
 
 	i = 0;
 	if (!(mem = malloc(sizeof(char) * size)))

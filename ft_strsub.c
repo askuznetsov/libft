@@ -14,8 +14,8 @@
 
 char	*ft_strsub(const char *s, unsigned int start, size_t len)
 {
-	char *str;
-	size_t i;
+	size_t	i;
+	char	*str;
 
 	i = 0;
 	str = malloc(sizeof(char) * len + 1);
@@ -32,5 +32,3 @@ char	*ft_strsub(const char *s, unsigned int start, size_t len)
 	}
 	return (str);
 }
-	
-	

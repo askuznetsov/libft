@@ -14,13 +14,14 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char temp[len];
+	unsigned char	temp[len];
+
 	if (len < (128 * 1024 * 1024))
-		{
-			ft_memcpy(temp, src, len);
-			ft_memcpy(dst, temp, len);
-		}
-		else
-			return (0);
+	{
+		ft_memcpy(temp, src, len);
+		ft_memcpy(dst, temp, len);
+	}
+	else
+		return (0);
 	return (dst);
 }

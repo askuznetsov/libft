@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okuznets <okuznets@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/01 19:02:19 by okuznets          #+#    #+#             */
-/*   Updated: 2018/01/16 14:50:06 by okuznets         ###   ########.fr       */
+/*   Created: 2018/01/16 16:10:10 by okuznets          #+#    #+#             */
+/*   Updated: 2018/01/16 16:14:45 by okuznets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	size_t i;
+	t_list	*list;
+	t_list	*next_list;
 
-	i = 0;
-	while (src[i])
+	if (!alst || *alst == NULL || !del)
+		return ;
+	list = *alst;
+	while (list)
 	{
-		dst[i] = src[i];
-		i++;
+		next_list = list->next;
+		del(list->content, list->content_size);
+		free(list);
+		list = next_list;
 	}
-	dst[i] = '\0';
-	return (dst);
+	*alst = NULL;
 }
