@@ -3,50 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okuznets <okuznets@student.42.fr>          +#+  +:+       +#+        */
+/*   By: okuznets <okuznets@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 16:28:51 by okuznets          #+#    #+#             */
-/*   Updated: 2018/01/16 15:25:26 by okuznets         ###   ########.fr       */
+/*   Updated: 2018/01/17 19:37:19 by okuznets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t		ft_count_word(const char *s, char c)
-{
-	size_t i;
-	size_t count;
-
-	i = 0;
-	count = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-	{
-		while (s[i] == c && s[i] != '\0')
-			i++;
-		if (s[i] != c && s[i] != '\0')
-			count++;
-		while (s[i] != c && s[i] != '\0')
-			i++;
-	}
-	return (count);
-}
-
-static size_t		ft_count_letters(const char *s, char c, size_t i)
-{
-	size_t count;
-
-	count = 0;
-	while (s[i] == c && s[i] != '\0')
-		i++;
-	while (s[i] != c && s[i] != '\0')
-	{
-		count++;
-		i++;
-	}
-	return (count);
-}
 
 static char			*ft_setarray(const char *s, char c, char *ar, size_t i)
 {

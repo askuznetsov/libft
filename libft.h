@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okuznets <okuznets@student.42.fr>          +#+  +:+       +#+        */
+/*   By: okuznets <okuznets@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 20:15:12 by vbrazas           #+#    #+#             */
-/*   Updated: 2018/01/16 17:01:03 by okuznets         ###   ########.fr       */
+/*   Updated: 2018/01/17 21:14:22 by okuznets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,16 @@ int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
+size_t				ft_count_word(const char *s, char c);
+size_t				ft_count_letters(const char *s, char c, size_t i);
+char				*ft_strrev(char *str);
+int					ft_is_delimeter(char temp);
+int					ft_abs(int number);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(int n);
 void				ft_putchar(char c);
 void				ft_putstr(char const *str);
+void				ft_putstr_till(char *str, int end, int flag);
 void				ft_putendl(char const *s);
 void				ft_putnbr(int n);
 void				ft_putchar_fd(char c, int fd);

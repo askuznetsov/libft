@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_is_delimeter.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okuznets <okuznets@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/11 19:11:28 by okuznets          #+#    #+#             */
-/*   Updated: 2018/01/17 20:55:25 by okuznets         ###   ########.fr       */
+/*   Created: 2018/01/17 21:00:12 by okuznets          #+#    #+#             */
+/*   Updated: 2018/01/17 21:06:45 by okuznets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(const char *s)
+int		ft_is_delimeter(char temp)
 {
-	size_t i;
-
-	if (s)
-	{
-		i = ft_strlen(s);
-		write(1, s, i);
-	}
-	write(1, "\n", 1);
+	if (temp == ' ' || temp == '\n' || temp == '\t'
+		|| temp == '\v' || temp == '\f' || temp == '\r')
+		return (1);
+	return (0);
 }

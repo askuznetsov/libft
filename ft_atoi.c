@@ -3,22 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okuznets <okuznets@student.42.fr>          +#+  +:+       +#+        */
+/*   By: okuznets <okuznets@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/14 15:49:47 by okuznets          #+#    #+#             */
-/*   Updated: 2018/01/16 15:18:52 by okuznets         ###   ########.fr       */
+/*   Updated: 2018/01/17 21:06:43 by okuznets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static	int		is_delimeter(char temp)
-{
-	if (temp == ' ' || temp == '\n' || temp == '\t'
-		|| temp == '\v' || temp == '\f' || temp == '\r')
-		return (1);
-	return (0);
-}
 
 int				ft_atoi(const char *str)
 {
@@ -28,7 +20,7 @@ int				ft_atoi(const char *str)
 
 	i = 0;
 	minus = 1;
-	while (is_delimeter(str[i]))
+	while (ft_is_delimeter(str[i]))
 		i++;
 	if (str[i] == '-')
 		minus = -1;

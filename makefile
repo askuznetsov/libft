@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: okuznets <okuznets@student.42.fr>          +#+  +:+       +#+         #
+#    By: okuznets <okuznets@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/24 16:55:15 by ibohonos          #+#    #+#              #
-#    Updated: 2018/01/16 16:28:14 by okuznets         ###   ########.fr        #
+#    Updated: 2018/01/17 21:11:32 by okuznets         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,14 @@ SRC =   ft_strlen.c \
         ft_lstdel.c \
         ft_lstadd.c \
         ft_lstiter.c \
-        ft_lstmap.c
+        ft_lstmap.c \
+        ft_putstr_till.c \
+        ft_is_delimeter.c \
+        ft_strrev.c \
+        ft_count_letters.c \
+        ft_count_word.c \
+        ft_abs.c
+
 
 all: $(NAME)
 

@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_count_letters.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okuznets <okuznets@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/11 19:11:28 by okuznets          #+#    #+#             */
-/*   Updated: 2018/01/17 20:55:25 by okuznets         ###   ########.fr       */
+/*   Created: 2018/01/17 19:36:42 by okuznets          #+#    #+#             */
+/*   Updated: 2018/01/17 19:37:03 by okuznets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(const char *s)
+size_t		ft_count_letters(const char *s, char c, size_t i)
 {
-	size_t i;
+	size_t count;
 
-	if (s)
+	count = 0;
+	while (s[i] == c && s[i] != '\0')
+		i++;
+	while (s[i] != c && s[i] != '\0')
 	{
-		i = ft_strlen(s);
-		write(1, s, i);
+		count++;
+		i++;
 	}
-	write(1, "\n", 1);
+	return (count);
 }
